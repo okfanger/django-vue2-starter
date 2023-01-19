@@ -10,9 +10,8 @@ class User(FactSchema):
     email = models.EmailField(unique=True, verbose_name='邮箱')
     telephone = models.CharField(max_length=20, verbose_name='电话号码')
     type = models.IntegerField(default=1, verbose_name='身份',
-                               choices=((1, '学生'), (2, '教师'), (3, '超级管理员')))
+                               choices=((1, '用户'), (2, '管理员')))
 
-    role = models.ForeignKey("Role", on_delete=models.PROTECT)
 
     @property
     def is_authenticated(self):
@@ -21,3 +20,4 @@ class User(FactSchema):
         authenticated in templates.
         """
         return True
+

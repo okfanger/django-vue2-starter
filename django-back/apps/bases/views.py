@@ -8,7 +8,6 @@ from apps.bases.pagination import MyPageNumberPagination
 from apps.bases.serializers import DictTypeSerializer, DictCodeSerializer
 from apps.bases.filters import DictCodeFilter
 
-
 class BaseViewSet(viewsets.ModelViewSet):
     # 补充创建者
     def create(self, request, *args, **kwargs):
